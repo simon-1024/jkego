@@ -1,0 +1,85 @@
+spring:
+  application:
+    name: e-mall
+  servlet:
+    multipart:
+      max-file-size: 5MB
+  output:
+    ansi:
+      enabled: always
+
+  #   数据源基本配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/emall?characterEncoding=utf-8
+    username: root
+    password: 123456
+    #   数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+
+  jpa:
+    database: mysql
+    show-sql: false
+    generate‐ddl: true  #生成ddl
+
+
+  mail:
+    host: SMTP.126.com
+    username: simon_1998@126.com
+    password: zxc147
+    default-encoding: utf-8
+
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+
+
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+
+  rabbitmq:
+    host: localhost
+
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+
+
+aliyun:
+  sms:
+    accessKeyId: LTAIfo84L6PZ4D6B
+    accessKeySecret: x20td1kgRUhggYM5jreeuD0nSvkMZz
+    template_code: SMS_170842162
+    sign_name: 金科E购
+
+
+jwt:
+  config:
+    key: simon
+    ttl: 360000
+
+
+logging:
+  config: classpath:logback-spring.xml
+  path: /home/simon/my_study/logs
