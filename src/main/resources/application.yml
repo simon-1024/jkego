@@ -42,8 +42,8 @@ spring:
 
   mail:
     host: SMTP.126.com
-    username: simon_1998@126.com
-    password: zxc147
+    username: ###@126.com
+    password: ###
     default-encoding: utf-8
 
   redis:
@@ -68,10 +68,10 @@ server:
 
 aliyun:
   sms:
-    accessKeyId: LTAIfo84L6PZ4D6B
-    accessKeySecret: x20td1kgRUhggYM5jreeuD0nSvkMZz
-    template_code: SMS_170842162
-    sign_name: 金科E购
+    accessKeyId: ###
+    accessKeySecret: ###
+    template_code: ###
+    sign_name: ###
 
 
 jwt:
